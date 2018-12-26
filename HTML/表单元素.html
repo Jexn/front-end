@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单元素</title>
+</head>
+<body>
+    <h3>文本框：</h3>
+    <input type="text">
+    
+    <h3>文本框大小：</h3>
+    <input type="text" size="100">
+    
+    <h3>带有初始值的文本框：</h3>
+    <input type="text" value="初始内容...">
+    
+    <h3>有背景文字的文本框：</h3>
+    <input type="text" placeholder="请输入内容...">
+
+    <h3>密码框：</h3>
+    <input type="password" placeholder="请输入密码...">
+
+    <h3>利用form向服务器提交数据</h3>
+    <form method="GET">
+        <label>账号: <input type="text"></label><br>
+        <label>密码: <input type="password"></label><br>
+        <input type="submit" value="登录">
+    </form>
+    <h3>GET和POST的区别：</h3>
+    <p>GET:</p>
+    <ul>
+        <li>GET是form的默认提交方式</li>
+        <li>如果是通过超链接访问某个地址，可以使用get方式</li>
+        <li>如果是在地址栏输入某个地址，可以使用get方式</li>
+        <li>GET提交的数据会直接显示在地址栏上，所以不能使用get方法提交敏感元素</li>
+        <li><strong>如果需要提交二进制数据，不如上传文件，那么不能使用get</strong></li>
+    </ul>
+    <p>POST:</p>
+    <ul>
+        <li>必须在form上通过method="post"显式的制定提交方法</li>
+        <li>提交的数据不会在浏览器地址栏上显示出来</li>
+        <li>可以用于提交二进制数据</li>
+    </ul>
+</body>
+</html>

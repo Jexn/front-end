@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>不换行的div</title>
+    <style>
+        #floatDiv{
+            width: 200px;
+        }
+        #floatDiv div{
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p> 默认的div排列是会换行的 </p>
+        <P> 如果使用float就可以达到水平排列的效果，通常会用在菜单，导航栏等地方 </P>
+        <p>如果超出了父容器，还会有自动换行的效果</P>
+
+        <div id="floatDiv">
+            <div>
+                div元素1
+            </div>
+            <div>
+                div元素2
+            </div>
+            <div>
+                div元素3
+            </div>
+            <div>
+                div元素4
+            </div>
+            <div>
+                div元素5
+            </div>
+            <div>
+                div元素6
+            </div>
+            <div>
+                div元素7
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

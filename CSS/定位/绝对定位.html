@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>绝对定位</title>
+    <style>
+        div {
+            width: 80%;
+            margin: 100px auto;
+            /* position: absolute; */
+        }
+
+        #example1 {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        #example21{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        #example2{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+
+        #i1{
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            z-index: 1;
+        }
+        #i2{
+            position: absolute;
+            left: 150px;
+            top: 150px;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>绝对定位</h3>
+        <p>属性：position</p>
+        <p>值：absolute</p>
+        <p>通过</p>
+
+        <h4>示例一：绝对定位</h4>
+        <p>正常文字</p>
+        <p>正常文字</p>
+        <p id="example1">绝对定位，left:50px,top:50px</p>
+        <p>正常文字</p>
+        <p>正常文字</p>
+        <p><strong><em>注意：</em></strong>绝对定位是相对于最近已经定位了的父容器而言,在这个例子中，example1这个p的父容器div，并没有定位。 所以它的”最近的一个定位了的父容器” 即body</p>
+    </div>
+
+    <div>
+        <h4>示例二：绝对定位是基于最近一个已经定位了的父容器</h4>
+        <p>正常文本</p>
+        <p>正常文本</p>
+        <p>正常文本</p>
+        <p>正常文本</p>
+        <p>example21标签的内容是相对于example1这个已经定位的元素而言，而example2是相对于example21而言</p>
+    </div>
+
+    <div id="example21">
+        这是一个定了位的div
+        <p id="example2">绝对定位的文字</p>
+    </div>
+
+    <div>
+        <h3>z-index</h3>
+        <p>通过绝对定位可以把一个元素放在另一个元素上，这样的位置就重复了</p>
+        <p>重复了，就存在一个谁覆盖谁的问题。这个时候就可以使用z-index属性</p>
+        <p>当z-index的值越大，就表示放上面，z-index越小，就表示放下面</p>
+        <img src="../image/pig.gif" id="i1" title="这是i1">
+        <img src="../image/pig.gif" id="i2" id="i2" title="这是i2">
+    </div>
+
+</body>
+
+</html>

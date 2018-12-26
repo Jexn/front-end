@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>相对定位</title>
+    <style>
+        div {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .pElement {
+            background: gray;
+        }
+
+        #example1 {
+            position: relative;
+            background: lightslategrey;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>相对定位</h3>
+        <p>属性：position</p>
+        <p>值：relative</p>
+        <hr>
+        <div>
+            <p>与绝对定位不同的是，相对定位不会把该元素从原文档删掉，而是在原文档基础上，根据属性移动相应距离</p>
+            <div class="pElement">
+                <p>正常内容</p>
+                <p>正常内容</p>
+                <p>正常内容</p>
+            </div>
+            <div>
+                <p id="example1">相对定位的内容，top:50px; left:50px</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

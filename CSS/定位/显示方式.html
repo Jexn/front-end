@@ -1,0 +1,103 @@
+<!DOCTYliE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>显示方式</title>
+    <style>
+        div {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        #displayElement {
+            display: none;
+        }
+
+        #visibilityElement {
+            visibility: hidden;
+        }
+
+        span{
+            border: 1px solid green;
+            width: 200px;
+        }
+        #spanBlock{
+            border: 1px solid green;
+            display: block;
+            width: 200px;
+            height: 50px;
+            margin: 20px;
+        }
+        #blockElemet{
+            border: 1px solid green;
+            margin: 20px;
+        }
+        .pInline{
+            display: inline;
+            border: 1px solid royalblue;
+        }
+        .inline_block_element{
+            display: inline-block;
+            width: 300px;
+            height: 25px;
+            text-align: center;
+            background: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>dislialy显示方式</h3>
+        <p>元素的dislilay显示方式有很多种，隐藏、块级、内联、内联-块级</p>
+        <ul>
+            <li>disalily:none 隐藏</li>
+            <li>dislilay:block 块级</li>
+            <li>dislilay:inline 内联</li>
+            <li>disalily:inline-block 内联-块级</li>
+        </ul>
+
+        <h4>display:none隐藏</h4>
+        <p>使用display:none; 隐藏一个元素，这个元素将不再占有空间</p>
+        <p>使用 visibility:hidden;隐藏一个元素，这个元素继续占有原空间，只是变得显示空白</p>
+        <p>测试</p>
+        <p id="displayElement">displayElement元素不在占有空间</p>
+        <p id="visibilityElement">visibilityElement元素只是变得不可见，但原来的空间位置还在</p>
+
+        <h4>display:block块级</h4>
+        <p> display:block; 表示块级元素</p>
+        <P>块级元素会自动在前面和后面加上换行，并且在其上的width和height也能够生效</P>
+        <p>div默认是块级元素</p>
+        <P>span默认是内联元素(不会有换行,width和height也不会生效)</P>
+
+        <div id="blockElement">
+            div这是一个块级元素，自动换行
+        </div>
+        <span>span默认是内联元素，不换行</span>
+        <span>span默认是内联元素，不换行</span>
+        <span>span默认是内联元素，不换行</span>
+        <span id="spanBlock">这个span元设置成块级元素</span>
+
+        <h4>display:inline内联</h4>
+        <P>display:inline; 表示内联元素</P>
+        <P>内联元素前后没有换行，并且在其上的width和height也无效。 其大小由其中的内容决定</P>
+        <P>div默认是块级元素</P>
+        <p>span默认是内联元素</P>
+        <p><Strong>p元素设置成内联元素</Strong></p>
+        <p class="pInline">这是一个内联P元素</p>
+        <p class="pInline">这是一个内联P元素</p>
+        <p class="pInline">这是一个内联P元素</p>        
+
+        <h4>display:inline-block内联-块级</h4>
+        <p>内联是不换行，但是不能指定大小</p>
+        <p>块级时能指定大小，但是会换行</p>
+        <p><strong>inline-block内联-块级是为了解决内联元素不能指定大小的问题，比如常见的标题栏，可以将内容元素块设置为inline-block，让内容大小代替内联元素大小</strong></p>
+        <span class="inline_block_element">主页</span>
+        <span class="inline_block_element">主页</span>
+        <span class="inline_block_element">主页</span>
+        <span class="inline_block_element">主页</span>
+    </div>
+</body>
+
+</html>

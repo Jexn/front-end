@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        div{
+            width: 80%;
+            margin: 0 auto;
+        }
+        #element1{
+            float: right;
+        }
+
+        #element2{
+            float: left;
+        }
+
+        #element3{
+            float: left;
+        }
+
+        #element4{
+            /* 给图片设置了浮动，但却不想文字围绕 */
+            float: left;
+        }
+
+        #element5{
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>浮动</h3>  
+        <p>浮动的框可以向左或向右移动，直到它的边缘碰到包含框或另一个浮动框的边框为止</p>
+        <p>属性：float</p>
+        <p>值：left,right</p>
+        
+        <hr>
+        <p>正常文字1</p>
+        <p>正常文字2</p>
+        <p id="element1">正常文字3,float:right</p>
+        <p>正常文字4</p>
+        <p>正常文字5</p>
+        <p><strong><em>注意：浮动元素之后的元素是否占据浮动元素的位置，需要按实际情况考虑，比如float:left时候，后面的元素不会覆盖浮动元素的位置</em></strong></p>
+        
+        <hr>
+        <p>非浮动元素</p>
+        <p>非浮动元素</p>
+        <p id="element2">浮动元素，其属性是float:left；但之后的非浮动元素不会占据浮动元素位置</p>
+        <p>非浮动元素</p>
+        <p>非浮动元素</p>
+        <hr>
+    </div>
+
+    <div>
+        <h4>非浮动情况下</h4>
+        <img src="../image/pig.gif">
+        <p>正常情况下，img和p都是块级元素，它们在布局时会自动换行。但如果设置位浮动元素，它们的布局将会改变。块元素尝试获取整个宽度，并在布局中开始新行。一些HTML元素是块元素或块级元素。&lt;h1&gt;, &lt;p&gt;, &lt;li&gt;, &lt;div&gt;都是块元素的示例。内联元素与其他内联元素保持在同一行中，并且不会开始新行。&lt;a&gt;, &lt;span&gt; 是内联元素的示例。我们可以使用display属性来更改块或内联函数。以下代码使li元素显示为内联元素。不是开始一个新行作为正常li元素，它显示li元素在同一行。</p>
+
+        <h4>浮动情况下</h3>
+        <img src="../image/pig.gif" id="element3">
+        <p>正常情况下，img和p都是块级元素，它们在布局时会自动换行。但如果设置位浮动元素，它们的布局将会改变。块元素尝试获取整个宽度，并在布局中开始新行。一些HTML元素是块元素或块级元素。&lt;h1&gt;, &lt;p&gt;, &lt;li&gt;, &lt;div&gt;都是块元素的示例。内联元素与其他内联元素保持在同一行中，并且不会开始新行。&lt;a&gt;, &lt;span&gt; 是内联元素的示例。我们可以使用display属性来更改块或内联函数。以下代码使li元素显示为内联元素。不是开始一个新行作为正常li元素，它显示li元素在同一行。</p>
+        <hr>
+    </div>
+
+    <div>
+        <h4>文字不想围绕图片</h4>
+        <img src="../image/pig.gif" id="element4">
+        <p id="element5">如果图片设置了浮动属性后，但是后面的文字不想围绕图片可以使用clear属性消除浮动，其值有：left、right、both、none</p>
+    </div>
+</body>
+</html>

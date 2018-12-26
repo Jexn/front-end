@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择框</title>
+</head>
+<body>
+    <h3>单选框</h3>
+    <form>
+        <p>今天晚上学习什么？</p>
+        <label><input type="radio" name="activity" value="Java">学习Java </label><br>
+        <!-- 默认选中 -->
+        <label><input type="radio" name="activity" value="TokyoHot" checked="checked">学习TokyoHot</label><br>
+        <label><input type="radio" name="activity" value="LOL">LOL</label><br>
+        <label><input type="radio" name="activity" value="Dota">Dota</label><br>
+        <label><input type="radio" name="activity" value="HTML">HTML</label><br>
+    </form>
+
+    <h3>复选框</h3>
+    <form>
+        <p>明天学什么？</p>
+        <label><input type="checkbox" name="" value="Java">Java</label><br>
+        <label><input type="checkbox" name="activity" value="Python">Python</label><br>
+        <label><input type="checkbox" name="" value="TokyoHot">TokyoHot</label><br>
+        <label><input type="checkbox" name="" value="HTML">HTML</label><br>
+    </form>
+
+    <h3>下拉选择</h3>
+    <form method="get">
+        <p>你喜欢哪位老师？</p>
+        <select id="teachs">
+            <!-- 可以使用size="3" multiple="multiple"设置默认显示项目数，以及进行多选 -->
+            <option value="1">苍老师</option>
+            <Option value="2">波多野结衣</Option>
+            <option value="3">仓木麻衣</option>
+        </select>
+    </form>
+
+    <h3>文本域</h3>
+    <textarea name="text" id="text" cols="30" rows="10"></textarea>
+
+    <h3>普通按钮</h3>
+    <!-- 普通按钮不能用在form内进行数据提交，需要使用submit进行提交-->
+    <input type="button" value="普通按钮">
+
+    <h3>form内的提交以及重置按钮</h3>
+    <form action="">
+        <label>账号：<input type="text" placeholder="请输入账号..."></label><br>
+        <label>密码：<input type="password" placeholder="请输入密码..."></label><br>
+        <input type="submit" value="提交">
+        <input type="reset" value="重置">
+    </form>
+
+</body>
+</html>

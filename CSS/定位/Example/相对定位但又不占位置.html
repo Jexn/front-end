@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>相对位置却不占位置</title>
+    <style>
+        #word33 {
+            position: relative;
+            left: 0px;
+            top: 0px;
+        }
+        #word3{
+            position: absolute;
+            left: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="word">
+        <p>正常文字1</p>
+        <p>正常文字2</p>
+        <div id="word33">
+            <p id="word3">正常文字3</p>
+        </div>
+        <p>正常文字4</p>
+        <p>正常文字5</p>
+    </div>
+</body>
+
+</html>
