@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>水平居中</title>
+    <style>
+        div{
+            width: 80%;
+            margin: 0 auto;
+        }
+        #example1{
+            text-align: center;
+        }
+        .example2{
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h3>水平居中</h3>
+        <p>水平居中分为内容居中和元素居中。</p>
+        <p>内容居中：text-align:"center"设定</p>
+        <p>元素居中：</p>
+        <hr>
+
+        <h4>内容居中</h4>
+        <p id="example1">这里的内容将会自动居中对齐</p>
+        <p style="text-align: center;">内嵌的水平居中设置</p>
+        <hr>
+
+        <h4>元素居中</h4>
+        <p>默认情况下块级元素会自动占用100%的宽度，所以无法观察元素是否居中</p>
+        <p class="example2">所以必须先设置块级元素的宽度，然后使用margin:0 auto;设置元素居中</p>
+        <span class="example2">span元素因为是内联元素，无法设置宽度，所以不能通过设置宽度，然后设置外边距margin:0 auto;到达居中效果</span>
+        <div class="example2">
+            <span>但是可以然span元素包裹再div元素中，再实现div元素的居中，以此达到span居中效果。</span>
+        </div>
+
+    </div>
+</body>
+
+</html>

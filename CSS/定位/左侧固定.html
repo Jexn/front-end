@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>左侧固定，右侧自动填满</title>
+    <style>
+        body{
+            width: 80%;
+            margin: 0 auto;
+        }
+        #left {
+            width: 200px;
+            float: left;
+            background: cadetblue;
+        }
+
+        #right {
+            overflow: hidden;
+            background: blue;
+        }
+        #parent {
+            width: 300px;
+            background: #ddd;
+            border: 1px solid;
+        }
+        #child1 {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            float: left;
+        }
+        #child2 {
+            width: 200px;
+            height: 50px;
+            background: red;
+        }
+        #parent1 {
+            width: 300px;
+            background: #ddd;
+            border: 1px solid;
+            overflow: hidden;
+        }
+        #child11 {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            float: left;
+        }
+        #child21 {
+            width: 200px;
+            height: 50px;
+            background: red;
+        }
+        pre{
+            background: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="left">固定左侧</div>
+        <div id="right">自动填满的右侧</div>
+    </div>
+
+    <div>
+        <p>"overflow:hidden"可以溢出隐藏，即当内容元素的高度大于其包含块的高度时，设置该属性即可把内容区域超出来的部分隐藏，使内容区域完全包含在该包含块中。</p>
+        <p>"overflow:hidden"还有另外一个特殊的用途，那就是清除包含块内子元素的浮动。</p>
+        <p><strong>例子：</strong></p>
+        <pre>
+        //html
+        &lt;body&gt;
+            &lt;div class="parent"&gt;
+                &lt;div class="child1"&gt;&lt;/div&gt;
+                &lt;div class="child2"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/body&gt;    
+        </pre>
+
+        <pre>
+        // css
+        .parent{
+            width:300px; 
+            background:#ddd; 
+            border:1px solid;
+        } 
+        .child1{ 
+            width:100px; 
+            height:100px; 
+            background:pink;
+            float:left;
+        }
+        .child2{ 
+            width:200px; 
+            height:50px; 
+            background:red;
+        }                   
+        </pre>
+        <div id="parent">
+            <div id="child1"></div>
+            <div id="child2"></div>
+        </div>
+    </div>
+
+    <p style="clear:both">上面的例子中，我们没有设置.parent的高度，所以.parent的高度默认为auto。由于.child1设置了浮动，脱离了文档流，所以.parent中只有.child2这一个文档流元素。现在我们给.parent添加"overflow:hidden"：</p>
+    <div id="parent1">
+            <div id="child11"></div>
+            <div id="child21"></div>
+    </div>
+</body>
+
+</html>

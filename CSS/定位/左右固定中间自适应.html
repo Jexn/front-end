@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左右固定，中间自适应</title>
+    <style>
+        body{
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #left{
+            float: left;
+            background: gray;
+            width: 20%;
+        }
+        #right{
+            width: 20%;
+            float: right;
+            background: seagreen;
+        }
+        #center{
+            margin: 0 20%;
+            background: teal;
+        }
+    </style>
+</head>
+<body>
+    <div id="left">左边固定</div>
+    <div id="right">右边固定</div>
+    <div id="center">中间自适应</div>
+    <p>首先需要先把左边设置为向左浮动，设置其宽度；然后右边设置为向右浮动，设置其宽度。最后设置中间部分margin，左右外边距大小要求和左边右边宽度一致。</p>
+    <p>这里利用浮动定位的特性，如果元素设置为向右浮动，如果位置没有占用，那么下面的元素自动会占据浮动元素的空间</p>
+</body>
+</html>

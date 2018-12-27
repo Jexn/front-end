@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>垂直居中</title>
+    <style>
+        body{
+            width: 80%;
+            margin: 0 auto;
+        }
+        #example1{
+            line-height: 100px;
+            border: 1px solid palegreen;
+        }
+        #example2{
+            padding: 50px 0;
+            border: 1px solid palegreen;
+        }
+        #example3{
+            display: table-cell;
+            vertical-align: middle;
+            border: 1px solid palegreen;
+        }
+    </style>
+</head>
+<body>
+    <h3>line-height单行居中</h3>
+    <div id="example1">
+        <p>line-height 适合单独一行垂直居中</p>
+    </div>
+
+    <h3>内边距居中</h3>
+    <div id="example2">
+        <p>借助设置相同的上下内边距，实现垂直居中效果，可以用在多行文本上</p>
+        <p>借助设置相同的上下内边距，实现垂直居中效果，可以用在多行文本上</p>
+        <p>借助设置相同的上下内边距，实现垂直居中效果，可以用在多行文本上</p>
+        <p>借助设置相同的上下内边距，实现垂直居中效果，可以用在多行文本上</p>        
+    </div>
+
+    <h3>table方式</h3>
+    <p>首先通过display: table-cell;把div用单元格的形式显示，然后借用单元格的垂直居中vertical-align: middle; 来达到效果。这样对图片也可以居中，上一步 line-height就不能对图片居中。</p>
+    <div id="example3">
+        <img src="../image/pig.gif">
+    </div>
+</body>
+</html>
