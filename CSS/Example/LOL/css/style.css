@@ -1,0 +1,67 @@
+body{
+    width: 80%;
+    margin: 0 auto;
+    color: white;
+    background: #333333;
+}
+hr{
+    width: 90%;
+    border: 1px dashed gainsboro;
+}
+/* 主盒子分类 */
+#heroCategory{
+    width: 20%;
+    float: left;
+    background: #11141B;
+}
+#heros{
+    overflow: hidden;
+    background: #11141B;
+    padding-top: 0px;
+}
+
+/* 英雄属性 */
+#div1 h3{
+    text-align: center;
+}
+#div1 div{
+    display: inline;
+    margin: 1.66%;
+}
+
+/* 英雄价格 */
+#heroPrice h3{
+    text-align: center;
+}
+#heroPrice div{
+    display: inline;
+    margin: 1.66%;
+}
+
+/* 武器类型 */
+#weapon{
+    margin-bottom: 10%;
+}
+#weapon h3{
+    text-align: center;
+}
+#weapon div{
+    display: inline;
+    margin: 1.66%;
+}
+
+/* 英雄类 */
+#heros div{
+    float: left;
+    display: inline;
+    text-align: center;
+    margin: 1%;
+}
+#heros div img{
+    width: 65px;
+    height: 65px;
+}
+#heros div p{
+    color: orange;
+    font-size: 10px;
+}
