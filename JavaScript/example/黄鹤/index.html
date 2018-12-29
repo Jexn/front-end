@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>黄鹤生成器</title>
+    <script src="huanghe.js"></script>
+    <style>
+        body{
+            width: 80%;
+            margin: 0 auto;
+        }
+        #divContent div{
+            float: left;
+            width: 40%;
+            margin: 5px;
+        }
+        #divContent div span{
+            width: 50%;
+        }
+        #divContent div input{
+            float: right;
+            width: 50%;
+        }
+        #build{
+            clear: both;
+            display: block;
+            width: 10%;
+            margin: 0 auto;
+        }
+        #content1{
+            clear: both;
+            display: block;
+            width: 80%;
+            margin: 10px auto;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divContent">
+        <div>
+            <span>地名：</span>
+            <input type="text" id="address" value="">
+        </div>
+        <div>
+            <span>公司类型：</span>
+            <input type="text" id="companyType" value="">
+        </div>
+        <div>
+            <span>公司名称：</span>
+            <input type="text" id="companyName" value="">
+        </div>
+        <div>
+            <span>老板姓名：</span>
+            <input type="text" id="bossName" value="">
+        </div>
+        <div>
+            <span>money：</span>
+            <input type="text" id="money" value="">
+        </div>
+        <div>
+            <span>产品：</span>
+            <input type="text" id="product" value="">
+        </div>
+        <div>
+            <span>价格计量单位：</span>
+            <input type="text" id="moneyType" value="">
+        </div>
+    </div>
+
+    <div>
+        <button id="build" onclick="build()">生成</button>
+    </div>
+
+    <div id="content">
+        <textarea id="content1" cols="20" rows="5" value=""></textarea>
+    </div>
+</body>
+
+</html>
