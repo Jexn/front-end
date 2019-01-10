@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>利息计算器</title>
+    <style>
+        #items{
+            display: grid;
+            grid-template-columns: 400px;
+            grid-template-rows: auto;
+        }
+        #items div{
+            margin: 10px;
+        }
+        .spantext{
+            width: 50%;
+        }
+        #items div input{
+            width: 40%;
+        }
+        #items div button{
+            width: 60%;
+            margin: 0 auto;
+        }
+        .unit{
+            width: 10%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="items">
+        <div>
+            <span class="spantext">起始资金：</span>
+            <input type="text" value="0">
+            <span class="unit">￥</span>
+        </div>
+        <div>
+            <span class="spantext">每年收益：</span>
+            <input type="text"  value="0">
+            <span class="unit">%</span>
+        </div>
+        <div>
+            <span class="spantext">复利年数：</span>
+            <input type="text" value="1">
+            <span class="unit">年</span>
+        </div>
+        <div>
+            <span class="spantext">每年追加资金：</span>
+            <input type="text" value="0">
+            <span class="unit">￥</span>
+        </div>
+        <div>
+            <button>计算</button>
+        </div>
+        <div>
+            <span class="spantext">本金和：</span>
+            <input type="text" value="0">
+            <span class="unit">￥</span>
+        </div>
+        <div>
+            <span class="spantext">利息和：</span>
+            <input type="text" value="0">
+            <spa class="unit"n>￥</span>
+        </div>
+        <div>
+            <span class="spantext">本息和：</span>
+            <input type="text" value="0">
+            <span class="unit">￥</span>
+        </div>
+    </div>
+</body>
+
+</html>

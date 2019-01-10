@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>复利计算器</title>
+    <style>
+        table{
+            border-collapse:  collapse;
+        }
+        td{
+            border: 1px silver solid;
+            padding: 5px;
+            font-size: 13px;
+        }
+        input{
+            width: 100px;
+        }
+    </style>
+    <script src="calculate.js"></script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>起始资金：</td>
+            <td><input type="text" value="0" id="initMoney">￥</td>
+        </tr>
+        <tr>
+            <td>每年收益：</td>
+            <td><input type="text" value="0" id="rate">%</td>
+        </tr>
+        <tr>
+            <td>复利年数：</td>
+            <td><input type="text" value="1" id="year">年</td>
+        </tr>
+        <tr>
+            <td>每年追加资金：</td>
+            <td><input type="text" value="0" id="each">￥</td>
+        </tr>
+        <tr id="action">
+            <td colspan="2" align="center"><button onclick="calculate()">计算</button></td>
+        </tr>
+        <tr>
+            <td>本金和：</td>
+            <td><input type="text" value="0" id="sum1">￥</td>
+        </tr>
+        <tr>
+            <td>利息和：</td>
+            <td><input type="text" value="0" id="sum2">￥</td>
+        </tr>
+        <tr>
+            <td>本息和：</td>
+            <td><input type="text" value="0" id="sum3">￥</td>
+        </tr>
+    </table>
+</body>
+
+</html>
