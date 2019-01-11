@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>单词排序</title>
+    <style>
+        #wordSort{
+            width: 300px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 200px 100px;
+            grid-template-rows: auto;
+        }
+        #wordSort div{
+            margin: 5px;
+        }
+    </style>
+    <script src="wordSort.js"></script>
+</head>
+
+<body>
+    <div id="wordSort">
+        <div>
+            <span>随机英文字符串：</span>
+        </div>
+        <div>
+            <input type="text" id="inputValue" value="" placeholder="input something...">
+        </div>
+        <div>
+            <span>正排序结果：</span>
+        </div>
+        <div>
+            <input type="text" value="" id="sort">
+        </div>
+        <div>
+            <span>倒排序结果：</span>
+        </div>
+        <div>
+            <input type="text" value="" id="reverse">
+        </div>
+        <div>
+            <button id="letter" onclick="letter()">按字母排序</button>
+        </div>
+        <div>
+            <button id="word" onclick="word()">按单词排序</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
