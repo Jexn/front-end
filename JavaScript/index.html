@@ -2,13 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JavaScript学习</title>
+    <title>获取元素</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/text.js"></script>
 </head>
 <body>
-    <button onclick="hide()">隐藏文本</button>
-    <button onclick="show()">显示文本</button>
-    <p id="text">通过onclick属性，可以隐藏或者显示这段文本</p>
+    <p id="item1" class="item" title="This item1 node">getElementById</p>
+    <p id="item2" class="item">getElementByTagName</p>
+    <p id="item3" class="item">getElementByClassName</p>
+    <script>
+        // getElementById返回节点对象
+        console.log(typeof document.getElementById("item1"));
+        // 通过getAttribute获取节点属性值
+        console.log(document.getElementById("item1").getAttribute("title"));
+        // 通过setAttribute()属性值
+        console.log(document.getElementById("item1").setAttribute("title","change title value"));
+
+        console.log(document.getElementById("item1").getAttribute("title"));        
+
+        // getElementByTagName返回一个数组
+        let tags = document.getElementsByTagName("p");
+        for(let i = 0; i < tags.length;i++){
+            console.log(tags[i].getAttribute("id"));
+        }
+
+        // getElementByClassName返回数组
+        let classs = document.getElementsByClassName("item");
+        for(let i = 0; i < classs.length;i++){
+            console.log(classs[i]);
+        }
+
+    </script>
 </body>
 </html>

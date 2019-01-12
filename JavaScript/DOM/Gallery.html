@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>图片库</title>
+</head>
+<style>
+    body{
+        width: 80%;
+        margin: 0 auto;
+        background: #F4F6F7;
+        color: #85929E;
+    }
+    a{
+        background-color: transparent;
+        font-weight: bold;
+        text-decoration: none;
+        color: #85929E;
+        padding: 10px;
+    }
+    a:hover{
+        background: #ABEBC6;
+    }
+    ul{
+        padding: 0;
+    }
+    li{
+        display: inline;
+        margin: 10px;
+    }
+</style>
+<body>
+    <h1>Snapshots</h1>
+    <ul>
+        <li>
+            <a href="images/fireworks.jpg" title="A firework display" onclick="showPic(this);return false;">Firework</a>
+        </li>
+        <li>
+            <a href="images/coffee.jpg" title="A cup of blank coffee" onclick="showPic(this);return false;">Coffee</a>
+        </li>
+        <li>
+            <a href="images/rose.jpg" title="A red,red rose" onclick="showPic(this);return false;">Rose</a>
+        </li>
+        <li>
+            <a href="images/bigben.jpg" title="The famous clock" onclick="showPic(this);return false;">Big Ben</a>
+        </li>
+    </ul>
+    <img src="images/placeholder.gif" alt="placeholder" id="placeholder" title="">
+    <p id="description">Choose an image</p>
+    <script src="script/showpic.js"></script>
+</body>
+
+</html>
