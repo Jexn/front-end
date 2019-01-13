@@ -1,4 +1,4 @@
-function showPic(whichpic) {
+function showPic(whichPic) {
     let placeholder = document.getElementById("placeholder");
     // 改变placeholder的src属性值
     placeholder.setAttribute("src", whichpic.getAttribute("href"));
@@ -21,12 +21,20 @@ function prepareLinks() {
     }
 }
 
-function showBody() {
-    let body_element = document.getElementsByTagName("body")[0];
-    alert[body_element];
-    for (let index = 0; index < body_element.childNodes.length; index++) {
-        console.log(body_element.childNodes[index].nodeValue);
-    }
+function addNode() {
+    let image = document.createElement("img");
+    image.setAttribute("id", "placeholder");
+    image.setAttribute("src", "images/placeholder.gif");
+    image.setAttribute("title", "my image gallery");
+
+    let para = document.createElement("p");
+    let text = document.createTextNode(image.getAttribute("title"));
+    para.setAttribute("title", image.getAttribute("title"));
+    para.appendChild(text);
+
+    let node = document.getElementById("imageGallery");
+    node.parentNode.insertBefore(image, node);
+    node.parentNode.insertBefore(para, node);
 }
 
 function addLoadEvent(func) {
@@ -41,5 +49,6 @@ function addLoadEvent(func) {
     }
 }
 
+
+addLoadEvent(addNode);
 addLoadEvent(prepareLinks);
-addLoadEvent(showBody);

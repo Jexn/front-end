@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作方法</title>
+</head>
+<body>
+    <div id="item">
+
+    </div>
+
+    <script>
+        function DOM_insert(){
+            let element = document.getElementById("item");
+            let newElement = document.createElement("p");
+
+            // DOM实现插入内容
+            let text = document.createTextNode("From DOM Change Content.");
+            newElement.appendChild(text);
+
+            // innerText实现插入内容
+            // newElement.innerText="From DOM Change Content.";
+            element.appendChild(newElement);
+        }
+
+        window.onload = DOM_insert;
+    </script>
+</body>
+</html>
