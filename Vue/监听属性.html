@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性监听</title>
+    <link rel="stylesheet" href="../../Frame/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <script src="script/vue.js"></script>
+    <style>
+        body{
+            width: 80%;
+            margin: 0 auto;
+        }
+        thead{
+            background: ghostwhite
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        
+        <table class="table table-condensed table-bordered table-hover text-center">
+            <thead>
+                <tr>
+                    <th>人民币</th>
+                    <th>美元</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <span>汇率：</span>
+                        <input v-model.number="exchange" type="number">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <span>￥：</span>
+                        <input v-model.number="rmb" type="number">
+                    </td>
+
+                    <td>
+                        <span>$:</span>
+                        <input v-model.number="dollar" type="number">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+        let app1 = new Vue({
+            el:"#app1",
+            data:{
+                exchange:6.4,
+                rmb:0,
+                dollar:0
+            },
+            watch:{
+                rmb:function(val){
+                    this.rmb = val;
+                    this.dollar = this.rmb / this.exchange;
+                },
+                dollar:function(val){
+                    this.dollar = val;
+                    this.rmb = this.dollar * this.exchange;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

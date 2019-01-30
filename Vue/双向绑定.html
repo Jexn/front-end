@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+    <link rel="stylesheet" href="../../Frame/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <script src="script/vue.js"></script>
+    <style>
+        body{
+            width: 80%;
+            margin: 0 auto;
+        }
+        div,span,button{
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app1">
+        <span>英雄名称：</span><input type="text" v-model="name"><br>
+        <button @click="doClick">双向绑定获取HTML数据</button>
+    </div>
+
+    <div id="app2">
+
+        <table class="table table-bordered table-hover table-condensed">
+            <tbody>
+                <tr>
+                    <th>视图类型</th>
+                    <th>输入数据</th>
+                    <th>绑定到Vue的值</th>
+                </tr>
+                <tr>
+                    <td>单行文本</td>
+                    <td>
+                        <input type="text" v-model.lazy="input" placeholder="输入数据">
+                    </td>
+                    <td>{{ input }}</td>
+                </tr>
+
+                <tr>
+                    <td>文本域textarea</td>
+                    <td>
+                        <textarea v-model="textarea" placeholder="输入数据"></textarea>
+                    </td>
+                    <td>{{ textarea }}</td>
+                </tr>
+
+                <tr>
+                    <td>单个复选框</td>
+                    <td>
+                        <input type="checkbox" id="checkbox" v-model="checkbox">
+                    </td>
+                    <td>{{checkbox}}</td>
+                </tr>
+
+                <tr>
+                    <td>多个复选框</td>
+                    <td>
+                        <input type="checkbox" id="teemo" value="teemo" v-model="checkedes">
+                        <label for="teemo">teemo</label>
+                        <input type="checkbox" id="gareen" value="gareen" v-model="checkedes">
+                        <label for="gareen">gareen</label>
+                        <input type="checkbox" id="annie" value="annie" v-model="checkedes">
+                        <label for="annie">annie</label>
+                    </td>
+                    <td>{{ checkedes }}</td>
+                </tr>
+
+                <tr>
+                    <td>单选按钮</td>
+                    <td>
+                        <input type="radio" id="one" value="one" v-model="radio">
+                        <label for="one">One</label>
+                        <br>
+                        <input type="radio" id="two" value="two" v-model="radio">
+                        <label for="two">Two</label>
+                    </td>
+                    <td>{{ radio }}</td>
+                </tr>
+
+                <tr>
+                    <td>单选选择框</td>
+                    <td>
+                        <select v-model="selected" size="5">
+                            <option disabled value="">请选择</option>
+                            <option>AD</option>
+                            <option>AP</option>
+                            <option>APC</option>
+                        </select>
+                    </td>
+                    <td>{{selected}}</td>
+                </tr>
+
+                <tr>
+                    <td>多选选择框</td>
+                    <td>
+                        <select v-model="selecteds" multiple size="5">
+                            <option disabled value="">请选择</option>
+                            <option>AD</option>
+                            <option>AP</option>
+                            <option>Jug</option>
+                            <option>ADC</option>
+                        </select>
+                    </td>
+                    <td>{{selecteds}}</td>
+                </tr>
+
+                <tr>
+                    <td>单个复选框</td>
+                    <td>
+                        <span>默认值是true或者false，也可以修改为自定义的值</span>
+                        <input type="checkbox" id="toggle" true-value="yes" false-value="no" v-model="toggle">
+                    </td>
+                    <td>
+                        {{toggle}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <h3>延迟生效的lazy</h3>
+    <div id="app3">
+        <p>{{page}}</p>
+        <input type="text" v-model.lazy="page" width="500px">
+    </div>
+
+    <h3>修饰符Number强制类型转换</h3>
+    <div id="app4">
+        
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>视图类型</th>
+                    <th>输入数据</th>
+                    <th>绑定到Vue上的值</th>
+                    <th>数值类型</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>单行文本1</td>
+                    <td>
+                        <input type="text" v-model="input1" type="number" placeholder="输入数据">
+                    </td>
+                    <td>
+                        {{input1}}
+                    </td>
+                    <td>{{typeof input1}}</td>
+                </tr>
+
+                <tr>
+                    <td>单行文本2</td>
+                    <td>
+                        <input type="text" v-model.number="input2" type="number" placeholder="输入数据">
+                    </td>
+                    <td>
+                        {{input2}}
+                    </td>
+                    <td>
+                        {{typeof input2}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    <script>
+        let app1 = new Vue({
+            el: "#app1",
+            data: {
+                name: "temmo",
+            },
+            methods: {
+                doClick: function () {
+                    alert(this.name);
+                }
+            }
+        });
+
+        let app2 = new Vue({
+            el: "#app2",
+            data: {
+                input: '',
+                textarea: '',
+                checkbox: '',
+                checkedes: [],
+                radio: '',
+                selected: '',
+                selecteds: [],
+                toggle: '',
+            }
+        });
+
+        let app3 = new Vue({
+            el:"#app3",
+            data:{
+                page:"可以通过v-model.lazy延迟生效，在失去焦距的时候生效"
+            }
+        })
+
+        let app4 = new Vue({
+            el:"#app4",
+            data:{
+                input1:'',
+                input2:''
+            }
+        })
+    </script>
+</body>
+
+</html>

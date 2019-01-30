@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>条件语句</title>
+    <script src="script/vue.js"></script>
+    <style>
+        body{
+            width: 80%;
+            margin: 0 auto;
+        }
+        div{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        <p v-if="show">默认显示，点击下面按钮隐藏</p>
+        <button v-on:click="toggle">显示/隐藏</button>
+    </div>
+
+    <hr>
+
+    <div id="app2">
+        <button v-on:click="win">0.01概率</button>
+        <p>一种点击了{{count}}次</p>
+        <p v-if="show">天选之子</p>
+        <p v-else>好好搬砖吧,别点了</p>
+    </div>
+
+    <hr>
+
+    <div id="app3">
+        <button v-on:click="fate">下辈子做什么人？</button>
+        <p v-if="probability>99">神仙</p>
+        <p v-else-if="probability>95">皇帝</p>
+        <p v-else-if="probability>90">比尔盖子</p>
+        <p v-else-if="probability>80">马云</p>
+        <p v-else-if="probability>70">加拿大电鳗</p>
+        <p v-else-if="probability>60">蔡徐坤</p>
+        <p v-else-if="probability>50">黄章</p>
+        <p v-else-if="probability>40">码农</p>
+        <p v-else-if="probability>30">血汗工人</p>
+        <p v-else-if="probability>20">农民</p>
+        <p v-else-if="probability>10">窃-格瓦拉</p>
+        <p v-else-if="probability>0">不做人真好</p>
+    </div>
+
+    <hr>
+    <script>
+        let app1 = new Vue({
+            el:"#app1",
+            data: {
+                show:true
+            },
+            methods: {
+                toggle: function() {
+                    this.show = !this.show;
+                }
+            },
+        });
+
+        let app2 = new Vue({
+            el:"#app2",
+            data:{
+                show:false,
+                count:0
+            },
+            methods:{
+                win:function(){
+                    this.show = Math.random() < 0.01;
+                    this.count ++;
+                }
+            }
+        });
+
+        let app3 = new Vue({
+            el:"#app3",
+            data:{
+                probability:0
+            },
+            methods:{
+                fate:function(){
+                    this.probability = Math.random() * 100;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

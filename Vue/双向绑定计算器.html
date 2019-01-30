@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定计算器</title>
+    <script src="script/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-model.number="a">
+        <span>+</span>
+        <input type="text" v-model.number="b">
+        <span>=</span>
+        <span>{{a+b}}</span>
+    </div>
+
+    <script>
+        let app = new Vue({
+            el:"#app",
+            data:{
+                a:0,
+                b:0
+            }
+        })
+    </script>
+</body>
+</html>

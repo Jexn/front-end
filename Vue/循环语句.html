@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环</title>
+    <script src="script/vue.js"></script>
+    <link rel="stylesheet" href="../../Frame/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <style>
+        body{
+            width: 80%;
+            margin: 0 auto;
+        }
+        div{
+            margin: 5px;
+        }
+    </style>
+</head>
+<body class="center">
+    <div id="app1">
+        <table class="table table-bordered table-condensed table-hover">
+            <tbody>
+                <tr class="firstLine">
+                    <td>NAME</td>
+                    <td>HP</td>
+                </tr>
+
+                <tr v-for="hero in heros">
+                    <td>{{hero.name}}</td>
+                    <td>{{hero.hp}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="app2">
+        
+        <table class="table table-bordered table-hover table-condensed">
+            <tbody>
+                <tr>
+                    <td>Index</td>
+                    <td>NAME</td>
+                    <td>HP</td>
+                </tr>
+                <tr v-for="hero,index in heros">
+                    <td>{{index+1}}</td>
+                    <td>{{hero.name}}</td>
+                    <td>{{hero.hp}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <script>
+        var data = [
+            {"name":"盖伦","hp":790},
+            {"name":"提莫","hp":650},
+            {"name":"安妮","hp":589},
+            {"name":"死歌","hp":620}
+        ]
+
+        let app1 = new Vue({
+            el:"#app1",
+            data:{
+                heros:data
+            }
+        })
+
+        let app2 = new Vue({
+            el:"#app2",
+            data:{
+                heros:data
+            }
+        })
+    </script>
+</body>
+</html>

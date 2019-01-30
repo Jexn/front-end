@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性绑定</title>
+    <link href="../../Frame/bootstrap-4.2.1-dist/js/bootstrap.min.js">
+    <script src="script/vue.js"></script>
+</head>
+<body>
+    <div id="app1">
+        <a v-bind:href="page">button</a>
+    </div>
+    <script>
+        let app1 = new Vue({
+            el:"#app1",
+            data:{
+                page:"https://www.12306.cn"
+            }
+        })
+    </script>
+</body>
+</html>

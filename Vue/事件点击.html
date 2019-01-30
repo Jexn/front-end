@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>事件点击</title>
+    <script src="script/vue.js"></script>
+    <style>
+        body {
+            width: 60%;
+            margin: 0 auto;
+        }
+        div {
+            width: 200px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        #element1 {
+            background: green;
+        }
+        #element2 {
+            background: blue;
+        }
+        #element3 {
+            background: red;
+        }
+        #element4 {
+            background: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="clickNum">
+        <p>一共点击了{{clickNum}}次</p>
+        <button v-on:click="count">点击</button>
+    </div>
+
+    <!-- 冒泡事件 -->
+    <div id="content">
+        <div id="element1" v-on:click="doc">
+            1
+            <div id="element2" v-on:click="doc">
+                2
+                <div id="element3" v-on:click="doc">
+                    3
+                    <div id="element4" v-on:click="doc">
+                        4
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script/listerenEvent.js"></script>
+</body>
+
+</html>

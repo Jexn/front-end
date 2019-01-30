@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>汇率计算</title>
+    <link rel="stylesheet" href="../../Frame/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <script src="script/vue.js"></script>
+    <style>
+        body{
+            width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="app1">
+        
+        <table class="table table-bordered table-hover text-center table-condensed">
+            <thead>
+                <tr>
+                    <th>人民币</th>
+                    <th>美元</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">汇率：<input type="number" v-model.number="exchange"></td>
+                </tr>
+
+                <tr>
+                    <td>￥：<input type="number" v-model.number="rmb"></td>
+                    <td>$：{{getDollar()}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <script>
+        let app1 = new Vue({
+            el:"#app1",
+            data:{
+                exchange:6.7,
+                rmb:0
+            },
+            
+            // computed 是有缓存的，只要rmb没有变化，dollar 会直接返回以前计算出来的值，而不会再次计算。 这样如果是复杂计算，就会节约不少时间。
+            // 而methods每次都会调用computed
+            // computed:{
+            //     dollar:function(){
+            //         return this.rmb / this.exchange;
+            //     }
+            // }    
+
+            methods:{
+                getDollar:function(){
+                    return this.rmb / this.exchange;
+                }
+            }
+        });
+
+        let app2 = new Vue({
+            el
+        })
+    </script>
+</body>
+</html>
