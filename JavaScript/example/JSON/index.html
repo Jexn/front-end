@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON</title>
+</head>
+<body>
+    <div id="item"></div>
+    <script>
+        let hero = {"name":"盖伦","hp":616};
+        let node = document.getElementById("item");
+        
+        let newNode = document.createElement("p");
+        let text = document.createTextNode("英雄名称："+hero.name+",血量："+hero.hp);
+        
+        newNode.appendChild(text);
+        node.appendChild(newNode);
+    </script>
+</body>
+</html>
