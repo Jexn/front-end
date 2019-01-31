@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>组件改进</title>
+    <script src="script/vue.js"></script>
+    <style>
+        .product {
+            float: left;
+            width: 200px;
+            border: 1px solid lightblue;
+            margin: 5px;
+        }
+
+        div.product:hover {
+            border: 1px solid #c40000;
+
+        }
+
+        div.price {
+            color: #c40000;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 10px;
+        }
+
+        div.productName {
+            color: gray;
+            font-size: 0.8em;
+            margin: 10px;
+        }
+
+        div.sale {
+            float: left;
+            width: 100px;
+            border: 1px solid lightgray;
+            border-width: 1px 0px 0px 0px;
+            color: gray;
+            font-size: 0.8em;
+            padding-left: 10px;
+        }
+
+        div.review {
+            overflow: hidden;
+            border: 1px solid lightgray;
+            border-width: 1px 0px 0px 1px;
+            color: gray;
+            font-size: 0.8em;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="template" style="display: none;">
+        <div class="product" v-on:click="increaseSales">
+            <div class="price">￥{{product.price}}</div>
+            <div class="productName">{{product.name}}</div>
+            <div class="sale">月成交量:{{product.sale}}</div>
+            <div class="review">评价:{{product.review}}</div>
+        </div>
+    </div>
+
+    <div id="app">
+        <product v-for=" item in products" v-bind:product="item"></product>
+    </div>
+    <script src="script/newGoods.js"></script>
+</body>
+
+</html>

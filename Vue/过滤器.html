@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue过滤器</title>
+    <script src="script/vue.js"></script>
+    <link rel="stylesheet" href="../../Frame/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <style>
+        body{
+            width: 80%;
+            margin: 0 auto;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Vue过滤器</h2>
+    <div id="app1">
+        
+        <table class="table table-bordered table-condensed text-center">
+            <thead>
+                <tr>
+                    <th>输入数据</th>
+                    <th>过滤后的结果</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text" v-model="data">
+                    </td>
+
+                    <td>
+                        {{data|capitalize}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <h2>多个过滤器</h2>
+    <div id="app2">
+        
+        <table class="table table-bordered table-hover text-center">
+            <thead>
+                <tr>
+                    <th>输入数据</th>
+                    <th>过滤后的结果</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text" v-model="str">
+                    </td>
+                    <td>
+                        {{str|str1|str2}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <script>
+        let app1 = new Vue({
+            el:"#app1",
+            data:{
+                data:""
+            },
+            filters:{
+                capitalize:function(value){
+                    if(!value){
+                        return '';
+                    }
+                    value = value.toString();
+                    return value.charAt(0).toUpperCase() + value.substring(1);
+                }
+            }
+        });
+
+        let app2 = new Vue({
+            el:"#app2",
+            data:{
+                str:""
+            },
+            filters:{
+                str1:function(value){
+                    if(!value){
+                        return "";
+                    }
+                    value = value.toString();
+                    return value.charAt(0).toUpperCase() + value.substring(1);
+                },
+                str2:function(value){
+                    if(!value){
+                        return "";
+                    }
+                    value = value.toString();
+                    return value.substring(0,value.length-1) + value.charAt(value.length-1).toUpperCase();
+                }
+            }
+        })
+    
+    </script>
+</body>
+</html>

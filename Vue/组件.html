@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue组件</title>
+    <script src="script/vue.js"></script>
+    <link rel="stylesheet" href="../../Frame/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <style>
+        div.product {
+            float: left;
+            border: 1px solid lightblue;
+            width: 200px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app1">
+        <product v-for="item in products" v-bind:product="item"></product>
+    </div>
+    <script src="script/goods.js"></script>
+</body>
+
+</html>
